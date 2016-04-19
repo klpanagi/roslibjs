@@ -359,14 +359,14 @@ Ros.prototype.getTopicType = function(topic, callback, failedCallback) {
  * @param callback - function with params:
  *   * type - String of the service type
  */
-Ros.prototype.getServiceType = function(service, callback, failedCallback) {
+Ros.prototype.getServiceType = function(svc, callback, failedCallback) {
   var serviceTypeClient = new Service({
     ros : this,
     name : '/rosapi/service_type',
     serviceType : 'rosapi/ServiceType'
   });
   var request = new ServiceRequest({
-    service: service
+    service: svc
   });
 
   if (typeof failedCallback === 'function'){
